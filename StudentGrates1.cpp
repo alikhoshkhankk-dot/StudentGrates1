@@ -7,6 +7,8 @@
 #include <string>
 using namespace std;
 
+// Stores the  information about a student.
+
 struct Student {
     string lastName;
     int studentID;
@@ -22,10 +24,14 @@ void assignLetterGrades(Student* students, int studentCount);
 void displayReport(Student* students, int studentCount, int testCount);
 void releaseMemory(Student*& students, int studentCount);
 
+// Main function to execute the program.
+
 int main() {
     Student* students = nullptr;
     int studentCount = 0;
     int testCount = 0;
+
+	// Read the student data from the file.
 
     if (!readGradeData("student_data.txt", students, studentCount, testCount)) {
         cout << "The program could not read the student data." << endl;
