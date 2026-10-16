@@ -78,6 +78,8 @@ bool readGradeData(string fileName, Student*& students,
             return false;
         }
 
+		// Allocate memory for the scores array for this student.
+
         students[i].scores = new double[testCount];
 
         for (int j = 0; j < testCount; j++) {
@@ -90,6 +92,8 @@ bool readGradeData(string fileName, Student*& students,
             }
         }
     }
+
+	// Check for any extra data in the file.
 
     inputFile.close();
     return true;
@@ -106,6 +110,8 @@ void calculateAverages(Student* students, int studentCount, int testCount) {
         students[i].average = total / testCount;
     }
 }
+
+// Assigns letter grades based on the average score.
 
 void assignLetterGrades(Student* students, int studentCount) {
     for (int i = 0; i < studentCount; i++) {
@@ -126,6 +132,8 @@ void assignLetterGrades(Student* students, int studentCount) {
         }
     }
 }
+
+// Displays the report of student grades.
 
 void displayReport(Student* students, int studentCount, int testCount) {
     cout << fixed << setprecision(2);
