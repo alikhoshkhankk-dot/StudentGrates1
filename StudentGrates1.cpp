@@ -17,6 +17,8 @@ struct Student {
     char letterGrade;
 };
 
+// Function prototypes.
+
 bool readGradeData(string fileName, Student*& students,
     int& studentCount, int& testCount);
 void calculateAverages(Student* students, int studentCount, int testCount);
